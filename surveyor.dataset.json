@@ -1,0 +1,8 @@
+{
+  "id": "surveyor",
+  "title": "Crowdsourced geotagged photos from Surveyor",
+  "license": "CC0",
+  "description": "Processes crowdsourced geotagged photo submissions from Surveyor",
+  "author": "Bert Spaan",
+  "website": "http://spacetime.nypl.org/surveyor"
+}
