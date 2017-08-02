@@ -16,6 +16,10 @@ const MIN_SUBMISSIONS_PER_PHOTO = 3
 const MIN_LOCATION_ZOOM = 13
 const MAX_DISTANCE = 50
 
+function getPhotoId (item) {
+  return `${item.organization.id}-${item.item.id}`
+}
+
 function download (config, dirs, tools, callback) {
   got.stream(url)
     .pipe(fs.createWriteStream(path.join(dirs.current, filename)))
@@ -83,7 +87,7 @@ function transform (config, dirs, tools, callback) {
     .map((item) => ({
       type: 'object',
       obj: {
-        id: `${item.organization.id}.${item.item.id}`,
+        id: getPhotoId(item),
         type: 'st:Photo',
         name: item.item.data.title,
         // validSince: item.item.data.date,
