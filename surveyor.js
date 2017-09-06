@@ -31,7 +31,7 @@ function flattenTree (tree) {
     if (tree.value) {
       return [tree.value]
     } else {
-        return [...flattenTree(tree.left), ...flattenTree(tree.right)]
+      return [...flattenTree(tree.left), ...flattenTree(tree.right)]
     }
   }
 }
@@ -74,6 +74,14 @@ function removeOutliers (item) {
   })
 }
 
+function checkDate (date) {
+  const validDate = date && (date.match(/^\d{4}$/) || date.match(/^\d{4}-\d{2}-\d{2}$/))
+
+  if (validDate) {
+    return date
+  }
+}
+
 function transform (config, dirs, tools, callback) {
   H(fs.createReadStream(path.join(dirs.download, filename)))
     .split()
@@ -90,14 +98,14 @@ function transform (config, dirs, tools, callback) {
         id: getPhotoId(item),
         type: 'st:Photo',
         name: item.item.data.title,
-        // validSince: item.item.data.date,
-        // validUntil: item.item.data.date,
+        validSince: checkDate(item.item.data.date),
+        validUntil: checkDate(item.item.data.date),
         data: Object.assign({
           id: item.item.id,
           organizationId: item.organization.id,
           submissions: item.submissions.length,
           clusterSize: item.clusterSize,
-          data: item.data,
+          data: item.item.data,
           type: item.bearing ? 'bearing' : 'location'
         }),
         geometry: item.bearing || item.location

@@ -1,6 +1,6 @@
 {
   "name": "etl-surveyor",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Processes crowdsourced geotagged photo submissions from Surveyor",
   "main": "surveyor.js",
   "author": "Bert Spaan",
