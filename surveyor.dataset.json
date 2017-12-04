@@ -12,8 +12,12 @@
   ],
   "contributors": [
     {
+      "title": "Surveyor contributors",
+      "role": "editor"
+    },
+    {
       "title": "Bert Spaan",
-      "role": "author"
+      "role": "editor"
     }
   ],
   "schema": {
