@@ -12,9 +12,27 @@
   ],
   "contributors": [
     {
-      "title": "Bert Spaan",
+      "title": "Surveyor contributors",
       "role": "author"
+    },
+    {
+      "title": "Bert Spaan",
+      "role": "wrangler"
     }
+  ],
+  "flattenPaths": [
+    "$.data.id",
+    "$.data.organizationId",
+    "$.data.submissions",
+    "$.data.clusterSize",
+    "$.data.data.title",
+    "$.data.data.image_id",
+    "$.data.data.location",
+    "$.data.data.date",
+    "$.data.data.image_urls",
+    "$.data.data.image_urls[0].url",
+    "$.data.data.image_urls[0].size",
+    "$.data.type"
   ],
   "schema": {
     "$schema": "http://json-schema.org/draft-04/schema#",
